@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech and Voice-to-Text</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include annyang library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <!-- Include Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
+    <script src="./backend.js"></script>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .btn-group>.btn {
+            margin-right: 10px;
+            /* Adjust spacing between buttons */
+        }
+
+        .details-box {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .voice-list {
+            margin-top: 20px;
+        }
+
+        .voice-list th {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .voice-details {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav nav-tabs" id="tabs">
+        <li class="nav-item">
+            <a class="nav-link active" id="voiceToTextTab" data-toggle="tab" href="#voiceToText">Voice to Text</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+
+        <div class="tab-pane fade show active" id="voiceToText">
+            <h1 class="mt-4">Voice-to-Text</h1>
+
+            <div class="form-group">
+                <label for="voiceDescription">Voice Description:</label>
+                <input type="text" class="form-control" id="voiceDescription"
+                    placeholder="Leave empty for auto-generation">
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="startVoiceToText()">Start Voice Recognition</button>
+            <p id="voiceResult"></p>
+            <div id="voiceCommandsInfo" class="mt-4">
+                <h5>Voice Commands</h5>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Stop Listening</h5>
+                                <p class="card-text">Pause voice recognition.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Resume Listening</h5>
+                                <p class="card-text">Resume voice recognition.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">PK</h5>
+                                <p class="card-text">Stop listening completely.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table voice-list">
+        <thead>
+            <tr>
+                <th>Name of Voice</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="voiceListBody"></tbody>
+    </table>
+
+    <div class="details-box" id="detailsBox">
+        <h5>Details</h5>
+        <p id="detailsText"></p>
+    </div>
+    </div>
+    </div>
+
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

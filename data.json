@@ -1,0 +1,14 @@
+{
+  "voices": [
+    {
+      "id": 1,
+      "name": "voicetranscriptnew1",
+      "text": "hello this is the sample voice transcript"
+    },
+    {
+      "id": 2,
+      "name": "voicetranscriptnew2",
+      "text": "start application by running the flowing command in our project directory"
+    }
+  ]
+}
