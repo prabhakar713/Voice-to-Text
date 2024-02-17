@@ -1,5 +1,5 @@
 # Voice-to-Text Feature
-![Dashboard](path/to/stop-listening.png)
+![Dashboard](https://github.com/prabhakar713/Voice-to-Text/blob/main/Dashboard.PNG)
 
 
 ## Overview
